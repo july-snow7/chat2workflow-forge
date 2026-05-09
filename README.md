@@ -1,5 +1,7 @@
 # Chat2Workflow Forge
 
+[![CI](https://github.com/july-snow7/chat2workflow-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/july-snow7/chat2workflow-forge/actions/workflows/ci.yml)
+
 Turn long chat exports into reusable agent workflow cards.
 
 This project starts from a plain-text WeChat export and turns it into:
@@ -60,6 +62,19 @@ chat2workflow analyze /path/to/wechat_export.txt --out report.md
 chat2workflow export-workflows /path/to/wechat_export.txt --out workflows.json
 ```
 
+For a direct install from GitHub:
+
+```bash
+pip install "git+https://github.com/july-snow7/chat2workflow-forge.git"
+```
+
+To inspect the CLI surface:
+
+```bash
+python -m chat2workflow --help
+chat2workflow analyze --help
+```
+
 ## Output shape
 
 Each workflow card contains:
@@ -95,4 +110,28 @@ This repository currently ships with:
 - a report renderer
 - CLI entry points
 - unit tests
-- CI for GitHub Actions
+- GitHub Actions CI
+
+## Development
+
+Create a virtual environment, install the package in editable mode, and run the
+test suite:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m unittest discover -s tests -v
+```
+
+## Contributing
+
+Contributions are welcome, but privacy matters more than volume:
+
+- never commit raw personal chat logs
+- use sanitized fixtures for tests and examples
+- include the workflow family or parser rule changed in each PR
+- run the unit test suite before opening a pull request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution checklist and
+[SECURITY.md](SECURITY.md) for disclosure guidance.

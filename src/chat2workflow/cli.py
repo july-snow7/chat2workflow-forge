@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from importlib.metadata import PackageNotFoundError, version
 import json
 from pathlib import Path
 from typing import Optional, Sequence, Union
@@ -22,8 +23,23 @@ def _write_output(path: Optional[str], text: str) -> None:
         print(text, end="")
 
 
+def _package_version() -> str:
+    try:
+        return version("chat2workflow")
+    except PackageNotFoundError:
+        return "0.0.0+local"
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="chat2workflow")
+    parser = argparse.ArgumentParser(
+        prog="chat2workflow",
+        description="Convert chat exports into reusable agent workflow cards.",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {_package_version()}",
+    )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     analyze = subparsers.add_parser(

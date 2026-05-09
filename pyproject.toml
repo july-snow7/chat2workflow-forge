@@ -8,15 +8,14 @@ version = "0.1.0"
 description = "Convert chat exports into reusable agent workflow cards."
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "MIT" }
+license = "MIT"
 authors = [
-  { name = "Chat2Workflow" }
+  { name = "july-snow7" }
 ]
 keywords = ["wechat", "agent", "workflow", "harness", "llm", "privacy"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
@@ -29,7 +28,9 @@ classifiers = [
 chat2workflow = "chat2workflow.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/your-handle/chat2workflow"
+Homepage = "https://github.com/july-snow7/chat2workflow-forge"
+Repository = "https://github.com/july-snow7/chat2workflow-forge"
+Issues = "https://github.com/july-snow7/chat2workflow-forge/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

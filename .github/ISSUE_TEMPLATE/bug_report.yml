@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a parser, workflow mining, or output bug.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not include raw personal chat logs or unredacted names.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Sanitized reproduction sample
+      description: Share a minimal, sanitized text snippet that reproduces the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, install method, and command used.
+    validations:
+      required: true
